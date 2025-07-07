@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from app.models import CRUD
 class CrudSerializer(ModelSerializer):
-    model = CRUD
-    fields = '__all__'
+    class Meta:
+        model = CRUD
+        fields = ['id','text','created','updated']
