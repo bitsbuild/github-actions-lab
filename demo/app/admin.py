@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from app.models import CRUD
+admin.site.register(CRUD)
