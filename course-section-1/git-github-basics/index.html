@@ -9,6 +9,36 @@
   <body>
     <h1>Git & GitHub Crash Course</h1>
     <p>Because the basics are important!</p>
-    <p>Adding this line to test out git checkour <commit-id></p>
+
+    <h2>Repositories & Commits</h2>
+    <p>A repository is a collection of code.</p>
+    <p>A commit in Git is a snapshot of the repository.</p>
+
+    <h2>Staging</h2>
+    <p>Staging in Git is marking files to be included in the next commit. Commands:</p>
+    <ul>
+      <li><code>git add &lt;file-name&gt;</code> – stage a specific file</li>
+      <li><code>git add .</code> – stage all files in the repository</li>
+    </ul>
+
+    <h2>Committing</h2>
+    <p>Creating a commit saves the staged changes:</p>
+    <ul>
+      <li><code>git commit -m "Your commit message"</code> – commit with a message</li>
+      <li><code>git commit</code> – commit without a message; Git will open an editor to type one</li>
+    </ul>
+
+    <h2>Pushing Changes</h2>
+    <p>Send your local commits to a remote repository:</p>
+    <ul>
+      <li><code>git push</code> – pushes commits to the default remote and branch</li>
+    </ul>
+
+    <h2>Checking Out Commits</h2>
+    <p>To view a previous state of the repository:</p>
+    <ul>
+      <li><code>git checkout &lt;commit-id&gt;</code> – moves to a specific commit (detached HEAD)</li>
+      <li>To return to the latest commit on a branch: <code>git checkout &lt;branch-name&gt;</code></li>
+    </ul>
   </body>
 </html>
