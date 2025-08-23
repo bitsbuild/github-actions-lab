@@ -9,18 +9,18 @@ A quick reference guide to the most commonly used Git commands.
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
-git config --list   # view config
-````
+git config --list   # view all config
+```
 
 ---
 
 ## 📂 Repository Basics
 
 ```bash
-git init                       # initialize a new repo
-git clone <url>                # clone an existing repo
-git status                     # check repo status
-git log                        # view commit history
+git init                       # initialize a new repository
+git clone <url>                 # clone an existing repository
+git status                      # check repo status
+git log                         # view commit history
 ```
 
 ---
@@ -28,10 +28,10 @@ git log                        # view commit history
 ## 📌 Staging & Committing
 
 ```bash
-git add <file>                 # stage a file
-git add .                      # stage all changes
-git commit -m "message"        # commit staged changes
-git commit -am "message"       # stage & commit tracked files
+git add <file>                  # stage a specific file
+git add .                       # stage all changes
+git commit -m "message"         # commit staged changes
+git commit -am "message"        # stage & commit tracked files
 ```
 
 ---
@@ -39,12 +39,12 @@ git commit -am "message"       # stage & commit tracked files
 ## 🔄 Branching & Merging
 
 ```bash
-git branch                     # list branches
-git branch <name>              # create branch
-git checkout <name>            # switch to branch
-git checkout -b <name>         # create & switch to branch
-git merge <branch>             # merge branch into current
-git branch -d <name>           # delete branch
+git branch                      # list all branches
+git branch <name>               # create a new branch
+git checkout <name>             # switch to branch
+git checkout -b <name>          # create & switch to branch
+git merge <branch>              # merge branch into current branch
+git branch -d <name>            # delete a branch
 ```
 
 ---
@@ -52,11 +52,11 @@ git branch -d <name>           # delete branch
 ## 📤 Remote Repositories
 
 ```bash
-git remote -v                  # list remotes
-git remote add origin <url>    # add remote
-git push -u origin <branch>    # push branch
-git pull origin <branch>       # pull branch
-git fetch                      # fetch latest updates
+git remote -v                   # list remotes
+git remote add origin <url>     # add a remote repository
+git push -u origin <branch>     # push branch and set upstream
+git pull origin <branch>        # pull branch from remote
+git fetch                       # fetch latest updates from remote
 ```
 
 ---
@@ -64,23 +64,32 @@ git fetch                      # fetch latest updates
 ## 🛠 Undoing Changes
 
 ```bash
-git restore <file>             # discard changes in working dir
-git reset <file>               # unstage file
-git reset --soft HEAD~1        # undo last commit, keep changes staged
-git reset --mixed HEAD~1       # undo last commit, keep changes unstaged
-git reset --hard HEAD~1        # undo last commit, discard changes
-git revert <commit>            # create new commit that undoes a specific commit
+git restore <file>              # discard changes in working directory
+git reset <file>                # unstage a file
+
+# Undo last commit (without commit ID)
+git reset --soft HEAD~1         # undo last commit, keep changes staged
+git reset --mixed HEAD~1        # undo last commit, keep changes unstaged
+git reset --hard HEAD~1         # undo last commit, discard changes
+
+git revert <commit>             # create new commit that undoes a specific commit
 ```
+
+**Notes on `git reset HEAD~1`**:
+
+* **Soft** → keeps all changes staged (ready to commit again).
+* **Mixed** → keeps changes in working directory but unstaged.
+* **Hard** → discards all changes completely.
 
 ---
 
 ## 📜 Stashing
 
 ```bash
-git stash                      # stash changes
-git stash list                 # list stashes
-git stash apply                # apply most recent stash
-git stash drop                 # remove most recent stash
+git stash                       # stash changes
+git stash list                  # list stashes
+git stash apply                 # apply most recent stash
+git stash drop                  # remove most recent stash
 ```
 
 ---
@@ -103,9 +112,9 @@ node_modules/
 ## 🔍 Inspection
 
 ```bash
-git diff                       # show unstaged changes
-git diff --staged              # show staged changes
-git show <commit>              # show details of a commit
+git diff                        # show unstaged changes
+git diff --staged               # show staged changes
+git show <commit>               # show details of a commit
 ```
 
 ---
@@ -113,6 +122,6 @@ git show <commit>              # show details of a commit
 ## 📦 Tags
 
 ```bash
-git tag                        # list tags
-git tag <name>                 # create tag
-git push origin <tagname>      # push tag to remote
+git tag                         # list all tags
+git tag <name>                  # create a tag
+git push origin <tagname>       # push tag to remote
