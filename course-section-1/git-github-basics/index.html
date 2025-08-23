@@ -66,5 +66,19 @@
       <li><code>git reset --mixed &lt;commit-id&gt;</code> – moves branch pointer and unstages changes (default)</li>
       <li><code>git reset --hard &lt;commit-id&gt;</code> – moves branch pointer and discards all changes</li>
     </ul>
+
+    <h2>Ignoring Files</h2>
+    <p>Sometimes you don't want certain files or folders to be tracked by Git. Use a <code>.gitignore</code> file:</p>
+    <ul>
+      <li>Create a file named <code>.gitignore</code> in your repository root.</li>
+      <li>Add file/folder patterns to ignore. Examples:</li>
+      <ul>
+        <li><code>node_modules/</code> – ignore the node_modules folder</li>
+        <li><code>*.log</code> – ignore all .log files</li>
+        <li><code>dist/</code> – ignore build output</li>
+        <li><code>secret.txt</code> – ignore a specific file</li>
+      </ul>
+      <li>Once added, Git will ignore these files/folders in future commits.</li>
+    </ul>
   </body>
 </html>
