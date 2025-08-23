@@ -1,0 +1,32 @@
+GitHub Actions Structure
+
+1. Repository
+
+    Can have multiple workflows (`.github/workflows/.yml`).
+
+2. Workflow
+
+    Defined in a YAML file.
+    Triggered by events like `push`, `pull_request`, `schedule`, or `manual`.
+    Can contain one or more jobs.
+    Represents a process or CI/CD pipeline.
+
+3. Job
+
+    Runs on a runner/environment (like `ubuntu-latest` or `windows-latest`).
+    Contains one or more steps.
+    Jobs run in parallel by default, unless dependencies are specified.
+
+4. Step
+
+    Smallest unit of execution.
+    Can be a shell command or an action.
+    Steps are executed sequentially within a job.
+
+---
+
+Summary:
+
+ Workflows = processes triggered by events
+ Jobs = define environment and scope of execution
+ Steps = actual commands or tasks executed
