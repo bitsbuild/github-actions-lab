@@ -40,5 +40,19 @@
       <li><code>git checkout &lt;commit-id&gt;</code> – moves to a specific commit (detached HEAD)</li>
       <li>To return to the latest commit on a branch: <code>git checkout &lt;branch-name&gt;</code></li>
     </ul>
+
+    <h2>Reverting Commits</h2>
+    <p>If you want to undo a commit without changing history:</p>
+    <ul>
+      <li><code>git revert &lt;commit-id&gt;</code> – creates a new commit that reverses the changes of the given commit</li>
+    </ul>
+
+    <h2>Resetting Commits</h2>
+    <p>If you want to undo commits and optionally remove changes:</p>
+    <ul>
+      <li><code>git reset --soft &lt;commit-id&gt;</code> – moves branch pointer but keeps changes staged</li>
+      <li><code>git reset --mixed &lt;commit-id&gt;</code> – moves branch pointer and unstages changes (default)</li>
+      <li><code>git reset --hard &lt;commit-id&gt;</code> – moves branch pointer and discards all changes</li>
+    </ul>
   </body>
 </html>
