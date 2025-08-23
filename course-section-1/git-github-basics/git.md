@@ -9,7 +9,7 @@ A quick reference guide to the most commonly used Git commands.
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
-git config --list   # view all config
+git config --list               # view all config
 ```
 
 ---
@@ -17,10 +17,10 @@ git config --list   # view all config
 ## 📂 Repository Basics
 
 ```bash
-git init                       # initialize a new repository
+git init                        # initialize a new repository
 git clone <url>                 # clone an existing repository
-git status                      # check repo status
-git log                         # view commit history
+git status                       # check repo status
+git log                          # view commit history
 ```
 
 ---
@@ -72,14 +72,19 @@ git reset --soft HEAD~1         # undo last commit, keep changes staged
 git reset --mixed HEAD~1        # undo last commit, keep changes unstaged
 git reset --hard HEAD~1         # undo last commit, discard changes
 
-git revert <commit>             # create new commit that undoes a specific commit
+# Undo a specific commit (using commit ID)
+git reset --soft <commit-id>    # move HEAD to commit-id, keep changes staged
+git reset --mixed <commit-id>   # move HEAD to commit-id, keep changes unstaged
+git reset --hard <commit-id>    # move HEAD to commit-id, discard all changes
+
+git revert <commit>             # create a new commit that undoes a specific commit
 ```
 
-**Notes on `git reset HEAD~1`**:
+**Notes on reset types**:
 
-* **Soft** → keeps all changes staged (ready to commit again).
-* **Mixed** → keeps changes in working directory but unstaged.
-* **Hard** → discards all changes completely.
+* **Soft** → keeps changes staged (ready to commit again)
+* **Mixed** → keeps changes in working directory but unstaged
+* **Hard** → discards all changes, working directory matches the commit
 
 ---
 
