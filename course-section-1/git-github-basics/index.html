@@ -15,70 +15,72 @@
     <p>A commit in Git is a snapshot of the repository.</p>
 
     <h2>Staging</h2>
-    <p>Staging in Git is marking files to be included in the next commit. Commands:</p>
     <ul>
       <li><code>git add &lt;file-name&gt;</code> – stage a specific file</li>
       <li><code>git add .</code> – stage all files in the repository</li>
     </ul>
 
     <h2>Committing</h2>
-    <p>Creating a commit saves the staged changes:</p>
     <ul>
       <li><code>git commit -m "Your commit message"</code> – commit with a message</li>
       <li><code>git commit</code> – commit without a message; Git will open an editor to type one</li>
     </ul>
 
     <h2>Checking Status</h2>
-    <p>Check the state of your working directory and staging area:</p>
     <ul>
       <li><code>git status</code> – shows modified, staged, and untracked files</li>
     </ul>
 
     <h2>Viewing Commit History</h2>
-    <p>See past commits:</p>
     <ul>
       <li><code>git log</code> – shows commit history with commit IDs, authors, and messages</li>
     </ul>
 
     <h2>Pushing Changes</h2>
-    <p>Send your local commits to a remote repository:</p>
     <ul>
       <li><code>git push</code> – pushes commits to the default remote and branch</li>
     </ul>
 
     <h2>Checking Out Commits</h2>
-    <p>To view a previous state of the repository:</p>
     <ul>
       <li><code>git checkout &lt;commit-id&gt;</code> – moves to a specific commit (detached HEAD)</li>
-      <li>To return to the latest commit on a branch: <code>git checkout &lt;branch-name&gt;</code></li>
+      <li><code>git checkout &lt;branch-name&gt;</code> – return to a branch</li>
     </ul>
 
     <h2>Reverting Commits</h2>
-    <p>If you want to undo a commit without changing history:</p>
     <ul>
       <li><code>git revert &lt;commit-id&gt;</code> – creates a new commit that reverses the changes of the given commit</li>
     </ul>
 
     <h2>Resetting Commits</h2>
-    <p>If you want to undo commits and optionally remove changes:</p>
     <ul>
-      <li><code>git reset --soft &lt;commit-id&gt;</code> – moves branch pointer but keeps changes staged</li>
-      <li><code>git reset --mixed &lt;commit-id&gt;</code> – moves branch pointer and unstages changes (default)</li>
-      <li><code>git reset --hard &lt;commit-id&gt;</code> – moves branch pointer and discards all changes</li>
+      <li><code>git reset --soft &lt;commit-id&gt;</code> – keep changes staged</li>
+      <li><code>git reset --mixed &lt;commit-id&gt;</code> – unstage changes but keep them in working directory</li>
+      <li><code>git reset --hard &lt;commit-id&gt;</code> – discard all changes</li>
     </ul>
 
     <h2>Ignoring Files</h2>
-    <p>Sometimes you don't want certain files or folders to be tracked by Git. Use a <code>.gitignore</code> file:</p>
     <ul>
-      <li>Create a file named <code>.gitignore</code> in your repository root.</li>
-      <li>Add file/folder patterns to ignore. Examples:</li>
+      <li>Create a <code>.gitignore</code> file in the repository root.</li>
+      <li>Add patterns to ignore (examples):</li>
       <ul>
-        <li><code>node_modules/</code> – ignore the node_modules folder</li>
-        <li><code>*.log</code> – ignore all .log files</li>
+        <li><code>node_modules/</code> – ignore dependencies</li>
+        <li><code>*.log</code> – ignore all log files</li>
         <li><code>dist/</code> – ignore build output</li>
         <li><code>secret.txt</code> – ignore a specific file</li>
       </ul>
-      <li>Once added, Git will ignore these files/folders in future commits.</li>
+    </ul>
+
+    <h2>Working with Branches</h2>
+    <p>Branches let you work on features or fixes independently from the main codebase:</p>
+    <ul>
+      <li><code>git branch</code> – list all branches in the repository</li>
+      <li><code>git branch &lt;branch-name&gt;</code> – create a new branch</li>
+      <li><code>git checkout &lt;branch-name&gt;</code> – switch to a branch</li>
+      <li><code>git checkout -b &lt;branch-name&gt;</code> – create and switch to a new branch in one step</li>
+      <li><code>git merge &lt;branch-name&gt;</code> – merge another branch into the current branch</li>
+      <li><code>git branch -d &lt;branch-name&gt;</code> – delete a branch (safe, if merged)</li>
+      <li><code>git branch -D &lt;branch-name&gt;</code> – force delete a branch (even if not merged)</li>
     </ul>
   </body>
 </html>
