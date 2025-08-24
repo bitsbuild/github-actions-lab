@@ -9,4 +9,5 @@ jobs:
  testing:
   runs-on: ubuntu-latest
   steps:
-   - run: echo "placeholder"
+   - name: Checkout
+     uses: actions/checkout@v5.0.0
