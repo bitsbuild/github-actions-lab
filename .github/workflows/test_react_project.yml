@@ -21,6 +21,6 @@ jobs:
       echo "Current Working Direcotry Is $(pwd)"
       ls
    - name: Install Dependencies
-     run: npm ci
+     run: npm install
    - name: Run Tests
      run: npm test     
