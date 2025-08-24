@@ -1,0 +1,10 @@
+name: My First Workflow
+on: workflow_dispatch
+jobs:
+ first_job:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Print Greeting
+     run: echo "Aap Kaise Ho?"
+   - name: Print Goodbye
+     run: echo "Chalo Mai Chalta Hu Ab!"
