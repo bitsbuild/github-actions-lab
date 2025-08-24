@@ -5,7 +5,9 @@ on:
   branches:
    - main
    - 'feature-*'
-   - 'branch-*' 
+   - 'branch-*'
+  path:
+   - '**.js' 
  workflow_dispatch:
  push:
   branches:
