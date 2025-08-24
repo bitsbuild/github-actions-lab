@@ -1,4 +1,5 @@
 name: Context
+on: push
 jobs:
  context:
   runs-on: ubuntu-latest
