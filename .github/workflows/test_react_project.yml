@@ -15,6 +15,11 @@ jobs:
      uses: actions/setup-node@v3
      with:
       node-version: 18
+   - name: Enter Relevant Directory
+     run: |
+      cd course-section-2/github-actions-basic/ActionsSampleProject
+      echo "Current Working Direcotry Is $(pwd)"
+      ls
    - name: Install Dependencies
      run: npm ci
    - name: Run Tests
