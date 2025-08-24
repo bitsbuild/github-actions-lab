@@ -1,1 +1,2 @@
-* linguist-language=Shell
+*.yml linguist-detectable=True
+* linguist-language=YAML
