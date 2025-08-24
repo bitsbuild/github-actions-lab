@@ -1,5 +1,5 @@
 name: Events Demo 1
-on: ...
+on: [push,workflow_dispatch]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -9,10 +9,13 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
+        working-directory: "course-section-3\github-actions-nxt\01 Starting Project"
         run: npm ci
       - name: Test code
+        working-directory: "course-section-3\github-actions-nxt\01 Starting Project"
         run: npm run test
       - name: Build code
+        working-directory: "course-section-3\github-actions-nxt\01 Starting Project"
         run: npm run build
       - name: Deploy project
         run: echo "Deploying..."
