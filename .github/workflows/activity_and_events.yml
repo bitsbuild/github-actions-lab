@@ -2,7 +2,10 @@ name: Events In Detail
 on:
  pull_request:
   type: [opened, edited]
- workflow_dispatch: 
+ workflow_dispatch:
+ push:
+  branches:
+   - main 
 jobs:
   deploy:
     runs-on: ubuntu-latest
