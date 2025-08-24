@@ -5,6 +5,9 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Print Greeting
-     run: echo "Aap Kaise Ho?"
+     run: |
+      echo "Aap Kaise Ho?"
+      echo "Aasha Karta Hu Ki Aap Theek Ho"
+      echo "Keep Developing Great Products!"
    - name: Print Goodbye
      run: echo "Chalo Mai Chalta Hu Ab!"
