@@ -17,6 +17,7 @@ jobs:
      working-directory: "course-section-2/github-actions-basic/02 Starting Project"
      run: npm test    
  deployment:
+  needs: testing
   runs-on: ubuntu-latest
   steps:
    - name: Checkout
