@@ -1,0 +1,12 @@
+name: Testing React Project
+on: push
+jobs:
+ print_start_message:
+   runs-on: ubuntu-latest
+   steps:
+    - run: |
+       echo "Starting Project Testing"
+ testing:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "placeholder"
