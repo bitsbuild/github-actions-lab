@@ -2,10 +2,16 @@ name: Events In Detail
 on:
  pull_request:
   type: [opened, edited]
+  branches:
+   - main
+   - 'feature-*'
+   - 'branch-*' 
  workflow_dispatch:
  push:
   branches:
-   - main 
+   - main
+   - 'feature-*'
+   - 'branch-*' 
 jobs:
   deploy:
     runs-on: ubuntu-latest
