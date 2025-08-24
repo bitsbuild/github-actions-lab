@@ -1,8 +1,8 @@
-name: Context
+name: Expressions And Context
 on: [push,workflow_dispatch]
 jobs:
- context:
+ info:
   runs-on: ubuntu-latest
   steps:
-   - name: Initial Command
-     run: echo ""
+   - name: Display Context (Metadata)
+     run: echo "${{toJSON(github)}}"
