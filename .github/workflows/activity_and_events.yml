@@ -1,4 +1,4 @@
-name: Events Demo 1
+name: Events In Detail
 on: [push,workflow_dispatch]
 jobs:
   deploy:
