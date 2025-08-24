@@ -1,5 +1,8 @@
 name: Events In Detail
-on: [push,workflow_dispatch]
+on:
+ pull_request:
+  type: [opened, edited]
+ workflow_dispatch: 
 jobs:
   deploy:
     runs-on: ubuntu-latest
