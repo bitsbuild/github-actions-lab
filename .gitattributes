@@ -1,2 +1,2 @@
-*.yml linguist-detectable=True
+*.yml linguist-detectable=true
 * linguist-language=YAML
