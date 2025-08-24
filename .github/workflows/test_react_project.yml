@@ -17,10 +17,10 @@ jobs:
       node-version: 18
    - name: Enter Relevant Directory
      run: |
-      cd course-section-2/github-actions-basic/02 Starting Project
+      cd "course-section-2/github-actions-basic/02 Starting Project"
       echo "Current Working Direcotry Is $(pwd)"
       ls
    - name: Install Dependencies
-     run: npm install
+     run: npm ci
    - name: Run Tests
      run: npm test     
