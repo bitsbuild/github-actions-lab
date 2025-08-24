@@ -17,7 +17,7 @@ jobs:
       node-version: 18
    - name: Enter Relevant Directory
      run: |
-      cd course-section-2/github-actions-basic/ActionsSampleProject
+      cd course-section-2/github-actions-basic/02 Starting Project
       echo "Current Working Direcotry Is $(pwd)"
       ls
    - name: Install Dependencies
