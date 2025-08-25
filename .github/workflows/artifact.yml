@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Install dependencies
         working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         run: npm install
@@ -31,7 +31,7 @@ jobs:
         working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         run: npm run build
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
          name: dist-dir
          path: |
