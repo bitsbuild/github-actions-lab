@@ -22,6 +22,8 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+     script-file: ${{steps.one.outputs.script-file}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -38,6 +40,10 @@ jobs:
          path: |
           course-section-5/artifacts-and-outputs/01 Starting Project/dist
           course-section-5/artifacts-and-outputs/01 Starting Project/package.json
+      - name: Set Output
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        id: one
+        run: ls '::set-output name=script-file::{}' ';'
   deploy:
     needs: build
     runs-on: ubuntu-latest
