@@ -68,7 +68,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: dist
+          path: "course-section-6/workflow-job-execution/01 Starting Project/dist"
   deploy:
     needs: build
     runs-on: ubuntu-latest
