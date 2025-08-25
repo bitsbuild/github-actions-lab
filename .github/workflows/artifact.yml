@@ -45,7 +45,7 @@ jobs:
         id: one
         run: |
          FILE=$(ls)
-         echo "script-file=$FILES" >> $GITHUB_OUTPUT
+         echo "script-file=$FILE" >> $GITHUB_OUTPUT
   deploy:
     needs: build
     runs-on: ubuntu-latest
