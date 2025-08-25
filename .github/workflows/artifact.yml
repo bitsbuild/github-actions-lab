@@ -32,6 +32,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: Cache For Dependencies
+        uses: actions/cache@v4
+        with:
+         path: ~/.npm
+         key: dependency-cache-${{hashFiles('**/package-lock.json')}}
       - name: Install dependencies
         working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         run: npm install
