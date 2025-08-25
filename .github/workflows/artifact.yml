@@ -44,7 +44,7 @@ jobs:
         working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         id: one
         run: |
-         FILE=$(find dist/assets/*.js -type f -execdir echo)
+         FILE=$(pwd)
          echo "script-file=$FILE" >> $GITHUB_OUTPUT
   deploy:
     needs: build
