@@ -30,6 +30,13 @@ jobs:
       - name: Build website
         working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         run: npm run build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+         name: dist-dir
+         path: |
+          dist
+          package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
