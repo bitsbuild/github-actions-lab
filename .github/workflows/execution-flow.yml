@@ -16,10 +16,10 @@ jobs:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        working-directory: "course-section-6/workflow-job-execution/01 Starting Project/package.json"
+        working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm install
       - name: Lint code
-        working-directory: "course-section-6/workflow-job-execution/01 Starting Project/package.json"
+        working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm run lint
   test:
     runs-on: ubuntu-latest
@@ -33,11 +33,11 @@ jobs:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        working-directory: "course-section-6/workflow-job-execution/01 Starting Project/package.json"
+        working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm install
       - name: Test code
         id: one
-        working-directory: "course-section-6/workflow-job-execution/01 Starting Project/package.json"
+        working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm run test
       - name: Upload test report
         if: failure() && ${{ steps.one.outcome == 'failure' }}
@@ -58,11 +58,11 @@ jobs:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        working-directory: "course-section-6/workflow-job-execution/01 Starting Project/package.json"
+        working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm install
       - name: Build website
         id: build-website
-        working-directory: "course-section-6/workflow-job-execution/01 Starting Project/package.json"
+        working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm run build
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
