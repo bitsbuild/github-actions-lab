@@ -37,6 +37,7 @@ jobs:
         working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm install
       - name: Test code
+        continue-on-error: true
         id: one
         working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm run test
