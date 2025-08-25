@@ -43,7 +43,7 @@ jobs:
       - name: Set Output
         working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         id: one
-        run: ls '::set-output name=script-file::{}' ';'
+        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
   deploy:
     needs: build
     runs-on: ubuntu-latest
