@@ -33,11 +33,12 @@ jobs:
         run: npm run build
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
         with:
          name: dist-dir
          path: |
-          dist/*
-          */package.json
+          "course-section-5/artifacts-and-outputs/01 Starting Project/dist"
+          "course-section-5/artifacts-and-outputs/01 Starting Project/package.json"
   deploy:
     needs: build
     runs-on: ubuntu-latest
