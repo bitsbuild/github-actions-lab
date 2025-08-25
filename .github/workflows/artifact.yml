@@ -42,5 +42,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+         name: dist-dir
       - name: Deploy
         run: echo "Deploying..."
