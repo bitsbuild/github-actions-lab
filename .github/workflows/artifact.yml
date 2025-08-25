@@ -57,5 +57,7 @@ jobs:
          ls
          cd dist
          ls
+      - name: Output Job Output
+        run: echo ${{needs.build.outputs.script-file}}
       - name: Deploy
         run: echo "Deploying..."
