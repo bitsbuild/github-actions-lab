@@ -16,6 +16,8 @@ jobs:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
+        if:
+         steps.cache.output.cache-hit
         working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
         run: npm install
       - name: Lint code
