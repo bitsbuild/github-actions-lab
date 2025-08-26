@@ -1,5 +1,12 @@
 name: Re-using Workflows
-on: workflow_call
+on: 
+ workflow_call:
+  inputs:
+   artifact-name:
+    description: The Name Of Deployable Artifact Files
+    required: false
+    default: dist-dir
+    type: string
 jobs:
  demo:
   runs-on: ubuntu-latest
@@ -9,4 +16,6 @@ jobs:
    - name: Downloading Artifacts
      uses: actions/download-artifact@v4
      with:
-      name: dist
+      name: ${{inputs.artifact-name}}
+   - name: List Files Post Artifacts Download
+     run: ls
