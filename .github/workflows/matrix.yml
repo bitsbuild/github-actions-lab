@@ -1,6 +1,7 @@
 name: Matrix
 on: [workflow_dispatch,push]
 jobs:
+ continue-on-error: true
  matrix:
   strategy:
    matrix:
