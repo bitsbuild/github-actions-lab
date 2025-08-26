@@ -18,7 +18,7 @@ jobs:
      uses: actions/cache@v4
      with:
       path: ~/.npm
-      key: Dependencies-Cached-${{hashFiles(**/package-lock.json)}}
+      key: Dependencies-Cached-${{hashFiles('**/package-lock.json')}}
    - name: Install Dependencies
      working-directory: "course-section-6/workflow-job-execution/01 Starting Project"
      run: npm install
