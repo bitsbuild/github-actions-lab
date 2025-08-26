@@ -2,14 +2,18 @@ name: Matrix
 on: [workflow_dispatch,push]
 jobs:
  matrix:
-  runs-on: ubuntu-latest
+  strategy:
+   matrix:
+    node-version: [12,14,16]
+    operating-system: [ubuntu-latest,windows-latest]
+  runs-on: ${{matrix.operating-system}}
   steps:
    - name: Get The Repository
      uses: actions/checkout@v4
    - name: Install Node
      uses: actions/setup-node@v4
      with:
-      node-version: 14
+      node-version: ${{matrix.node-version}}
    - name: Cache Dependencies
      uses: actions/cache@v4
      with:
