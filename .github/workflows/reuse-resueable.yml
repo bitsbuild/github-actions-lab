@@ -1,0 +1,8 @@
+name: Reuse The Reusable
+on: push
+jobs: 
+ demo-reuse:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Reuse
+     uses: ".github/workflows/reusable-workflows.yml"
