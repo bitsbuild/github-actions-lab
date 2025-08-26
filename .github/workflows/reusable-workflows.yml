@@ -7,12 +7,18 @@ on:
     required: false
     default: dist-dir
     type: string
+  outputs:
+   result:
+    description: Yet Another Result
+    value: ${{jobs.demo.outputs.outcome}}
   # secrets:
   #  secret-name:
   #   required: true
 jobs:
  demo:
   runs-on: ubuntu-latest
+  outputs:
+   outcome: ${{steps.one.outputs.result}}
   steps:
    - name: Demo Message
      run: echo "Reusable Workflow Demo"
@@ -22,3 +28,6 @@ jobs:
       name: ${{inputs.artifact-name}}
    - name: List Files Post Artifacts Download
      run: ls
+   - name: Set Output Value
+     id: one
+     run: echo "result=success" >> $GITHUB_OUTPUT
