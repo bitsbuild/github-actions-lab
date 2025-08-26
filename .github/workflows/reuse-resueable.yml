@@ -57,6 +57,7 @@ jobs:
          FILE=$(pwd)
          echo "script-file=$FILE" >> $GITHUB_OUTPUT
   test-artifact-for-reusable-workflow:
+   needs: build
    uses: ./.github/workflows/reusable-workflows.yml
    with:
     artifact-name: dist-dir
