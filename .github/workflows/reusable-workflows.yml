@@ -6,3 +6,7 @@ jobs:
   steps:
    - name: Demo Message
      run: echo "Reusable Workflow Demo"
+   - name: Downloading Artifacts
+     uses: actions/download-artifact@v4
+     with:
+      name: dist

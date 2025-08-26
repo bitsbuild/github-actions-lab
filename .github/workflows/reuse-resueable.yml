@@ -1,5 +1,75 @@
-name: Reuse The Reusable
-on: push
-jobs: 
- demo-reuse:
-  uses: bitsbuild/github-actions-lab/.github/workflows/reusable-workflows.yml@new
+name: Deploy website
+on:
+  push:
+    branches:
+      - new
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Cache For Dependencies
+        uses: actions/cache@v4
+        with:
+         path: ~/.npm
+         key: dependency-cache-${{hashFiles('**/package-lock.json')}}
+      - name: Install dependencies
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        run: npm install
+      - name: Lint code
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        run: npm run lint
+      - name: Test code
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        run: npm run test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    outputs:
+     script-file: ${{steps.one.outputs.script-file}}
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Cache For Dependencies
+        uses: actions/cache@v4
+        with:
+         path: ~/.npm
+         key: dependency-cache-${{hashFiles('**/package-lock.json')}}
+      - name: Install dependencies
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        run: npm install
+      - name: Build website
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        run: npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+         name: dist-dir
+         path: |
+          course-section-5/artifacts-and-outputs/01 Starting Project/dist
+          course-section-5/artifacts-and-outputs/01 Starting Project/package.json
+      - name: Set Output
+        working-directory: "course-section-5/artifacts-and-outputs/01 Starting Project"
+        id: one
+        run: |
+         FILE=$(pwd)
+         echo "script-file=$FILE" >> $GITHUB_OUTPUT
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+         name: dist-dir
+      - name: Output Contents
+        run: |
+         ls
+         cd dist
+         ls
+      - name: Output Job Output
+        run: echo ${{needs.build.outputs.script-file}}
+      - name: Deploy
+        run: echo "Deploying..."
