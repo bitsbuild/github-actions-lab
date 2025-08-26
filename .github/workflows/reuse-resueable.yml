@@ -63,6 +63,12 @@ jobs:
     artifact-name: dist-dir
   #  secrets:
   #   some-secret: ${{secrets.secret_name}}
+  print-reusable-output:
+   needs: test-artifact-for-reusable-workflow
+   runs-on: ubuntu-latest
+   steps:
+    - name: Message
+      run: echo "Displaying Reusbale Workflow Outputs: ${{needs.test-artifact-for-reusable-workflow.outputs.result}}"
   deploy:
     needs: build
     runs-on: ubuntu-latest
