@@ -5,4 +5,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Reuse
-     uses: ".github/workflows/reusable-workflows.yml"
+     uses: bitsbuild/github-actions-lab/.github/workflows/reusable-workflows.yml
