@@ -58,8 +58,8 @@ jobs:
          echo "script-file=$FILE" >> $GITHUB_OUTPUT
   test-artifact-for-reusable-workflow:
    uses: ./.github/workflows/reusable-workflows.yml
-    with:
-     artifact-name: dist-dir
+   with:
+    artifact-name: dist-dir
   deploy:
     needs: build
     runs-on: ubuntu-latest
