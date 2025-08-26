@@ -1,8 +1,8 @@
 name: Matrix
 on: [workflow_dispatch,push]
 jobs:
- continue-on-error: true
  matrix:
+  continue-on-error: true
   strategy:
    matrix:
     node-version: [12,14,16]
