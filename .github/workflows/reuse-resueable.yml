@@ -2,4 +2,4 @@ name: Reuse The Reusable
 on: push
 jobs: 
  demo-reuse:
-  uses: bitsbuild/github-actions-lab/.github/workflows/reusable-workflows.yml
+  uses: bitsbuild/github-actions-lab/.github/workflows/reusable-workflows.yml@new
