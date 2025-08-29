@@ -1,0 +1,4 @@
+There are three types of custom actions:
+1. Javascript Actions
+2. Docker Actions
+3. Composite Actions
